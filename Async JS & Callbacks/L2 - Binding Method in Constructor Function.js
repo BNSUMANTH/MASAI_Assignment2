@@ -6,6 +6,6 @@ function person(name,age){
        console.log(`Name: ${this.name}, Age: ${this.age}`)
     }
   }
-let ans = new person("Aswarth",19)
+let ans = new person("sumanth",19)
 let a=ans.displayInfo.bind(ans)
 a()
