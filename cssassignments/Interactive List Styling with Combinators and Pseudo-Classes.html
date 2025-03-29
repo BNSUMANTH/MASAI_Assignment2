@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>combinators and pseudo-classes</title>
+    <style>
+        li#id1{
+            font-weight: bold;
+        }
+        li#id1+li{
+            background-color: aqua;
+        }
+        li#id2~li{
+            font-style: italic;
+        }
+        ol:hover{
+            color: brown;
+        }
+        ol:active{
+            color: blueviolet;
+        }
+    </style>
+</head>
+<body>
+    <ol>
+        <li id="id1">Rohit</li>
+        <li>Virat</li>
+        <li id="id2">Bumrah</li>
+        <li>Hardik</li>
+        <li>Tilak</li>
+    </ol>
+</body>
+</html>
