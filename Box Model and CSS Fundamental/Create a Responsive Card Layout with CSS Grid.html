@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inheritance and layout example</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      color: navy;
+    }
+
+    h1 {
+      font-size: 2rem;
+      text-align: center;
+    }
+    .container {
+      display: flex;
+      justify-content: space-between;
+      padding: 20px;
+      background-color: rgb(253, 237, 8);
+    }
+
+    .box {
+      width: 30%;
+      padding: 15px;
+      background-color: rgb(146, 219, 243);
+    }
+
+    @media (max-width: 1000px) {
+      .container {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .box {
+        width: 80%;
+        margin-bottom: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>CSS Inheritance and Layout Example</h1>
+
+  <div class="container">
+    <div class="box">Box 1</div>
+    <div class="box">Box 2</div>
+    <div class="box">Box 3</div>
+  </div>
+
+</body>
+</html>

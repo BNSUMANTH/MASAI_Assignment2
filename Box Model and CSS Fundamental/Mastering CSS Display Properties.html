@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DISPLAY PROPERTIES</title>
+    <style>
+        div#block-element{
+            width: Full-width;
+            border: 2px solid black;
+            display: block;
+            margin-bottom: 10px;
+            padding-left: 20px;
+        }
+        #inline-element{
+            background-color: brown;
+            display: inline;
+            /* margin-bottom: 100px; */
+            /* border: 2px solid blue; */
+        }
+        #inline-block-element{
+            width: 100px;
+            height: 100px;
+            border: 2px solid brown;
+            display: inline-block;
+            color: rgb(3, 34, 34);
+            text-align: center;
+            /* margin-top: 50px; */
+        }
+        #hidden-element{
+            display: none;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="block-element">
+        <p>My name is Bumrah</p>
+        <p>This is a block element</p>
+    </div>
+    <div id="inline-element">
+        <p>This is a inline element</p>
+        <!-- <mark>Rohit</mark> -->
+    </div>
+    <div id="inline-block-element">
+        <div>Box1</div>
+        <!-- <div style="width: 20px;height: 20px;background-color: blue;">Box2</div> -->
+    </div>
+    <!-- </div> -->
+    <div id="hidden-element" >
+        <p>Hello</p>
+        
+    </div>
+    <!-- <button style="display: block;">look</button> -->
+</body>
+</html>
