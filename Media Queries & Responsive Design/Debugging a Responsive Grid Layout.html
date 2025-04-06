@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debugging</title>
+    <style>
+        div.container{
+            width: 80%;
+            height: auto;
+            /* background-color: yellow; */
+            margin: auto;
+            
+        }
+        h1{
+            text-align: center;
+            color: blue;
+        }
+        div#gallary{
+            display: grid;
+            margin: 10px;
+            gap: 10px;
+            grid-template-columns: repeat(1,1fr);
+            /* border: 2px solid red; */
+            /* margin-bottom: 10px; */
+        }
+        #gallary>div{
+            border: 2px solid;
+            background-color: brown;
+            height: 25vh;
+            
+        }
+        @media(width>1024px){
+            div#gallary{
+                /* width: 100%; */
+                grid-template-columns: repeat(4,1fr);
+            }
+            div#gallary>div{
+                background-color: aqua;
+                height: 30vh;
+            }
+        }
+        @media(width>768px) and (width<=1024px){
+            div#gallary{
+                /* width: 100%; */
+                grid-template-columns: repeat(2,1fr);
+            }
+            div#gallary>div{
+                background-color: rgb(13, 194, 68);
+                height: 20vh;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Responsive Gallary</h1>
+    <div id="gallary">
+        <div class="item">Item 1</div>
+        <div class="item">Item 2</div>
+        <div class="item">Item 3</div>
+        <div class="item">Item 4</div>
+        <div class="item">Item 5</div>
+        <div class="item">Item 6</div>
+        
+    </div>
+    </div>
+    
+</body>
+</html>
