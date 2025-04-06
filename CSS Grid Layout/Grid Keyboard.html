@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            background-color: rgb(95, 148, 164);
+        }
+        #sum{
+            background-color:rgb(39, 43, 43);
+            width: 80%;
+            height: 50vh;
+           display: grid;
+           grid-template-columns: repeat(12,1fr); 
+           grid-template-rows: repeat(5,1fr);
+           gap:10px;
+           padding: 20px;
+           
+        }
+        #sum>div>img{
+
+            width: 30px;
+            height: 20px;
+        }
+        #sum>div>img{
+            width: 30px;
+            height: 20px;
+        }
+        #right>img{
+            width: 30px;
+            height: 20px;
+        }
+        #sum>div{
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+            background-color: black;
+           border-radius: 5px;
+            text-align: center;
+            color: rgb(95, 148, 164);
+            display: flex;
+            /* flex-direction: column; */
+            justify-content: center;
+            align-items: center;
+
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="sum">
+        <div>~</div>
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+        <div>9</div>
+        <div>0</div>
+        <div>Delete</div>
+        <div>tab</div>
+        <div>Q</div>
+        <div>W</div>
+        <div>E</div>
+        <div>R</div>
+        <div>T</div>
+        <div>Y</div>
+        <div>U</div>
+        <div>I</div>
+        <div>O</div>
+        <div>P</div>
+        <div>\</div>
+        <div>caps</div>
+        <div>A</div>
+        <div>S</div>
+        <div>D</div>
+        <div>F</div>
+        <div>G</div>
+        <div>H</div>
+        <div>J</div>
+        <div>K</div>
+        <div>L</div>
+        <div style="grid-area: auto/span 2;">Enter</div>
+        <div>shift</div>
+        <div>Z</div>
+        <div>X</div>
+        <div>C</div>
+        <div>V</div>
+        <div>B</div>
+        <div>N</div>
+        <div>M</div>
+        <div><</div>
+        <div>></div>
+        <div style="grid-area: auto/span 2;">shift</div>
+        <div >globe<i class="fa-solid fa-globe"></i></div>
+        <div>control</div>
+        <div>option</div>
+        <div>alt</div>
+        <div style="grid-area:auto/span 4;">space</div>
+        <div>alt</div>
+        <div>option</div>
+        <div id="left"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAb1BMVEX///8eIB0ABwAABQAAAACfn56jpKIbHRrDw8MZHBjMzMzAwcAbHhrExcQDCQDS0tIVGBQKDgi4ubjl5eVxcnEQEw/29vbe396ur66YmJdeX13Z2di1trUlJyRRUlFlZmRERkQ5Ozg0NjN4eXhTVFLuQuL+AAADfUlEQVR4nO2dbU/bQBCE/XLFdvxSO06CAwQI9P//xiaASiDjVqrOWt3cPN8jzeh2vbt3ji9JhBBCCCGEEEIIIYQQQgghhBBC/AfjtN9Po7WK5Rg3znWdc3f31koWYlUN6Rtb92CtZRFKV6QfFK60VrMA9afBNK0OO2s93qmzC4Np6iZrQb5p3ReDaf9orcgz3w2eFtFakl/qK4NkDr/l4NvTdLAW5ZPyegXT7ZO1Ko8gg6mrrWX5o86Bwf7ZWpY/StdcG6yGW2td3oAhWnU/rXV5A5SJ8wqurHV5A5QJLoMwRIucx+B1q3ZeQaccDIYyQ2WiIzLIXiawwZzHIH2ZaFGrVjgegzhEM6IQZS8T9DmIW7WM3KBatYAoc7VqYYNDlMkge5mAAy9Tq4YnerVq4UCfg2rVQqeGnQxViCKDRBu/atVCJ9IyQd+qMW38qlULHJyD9FsWTDmI3pOptkwrqMOXsFGZCB3692T4J3r2HNThS+jgEGWqg+xlgv7wRa1a6NDnoA5fQqeGA++BxyCc6NP+6eZHwEzt7sIgCNGzxSxknHOb8e8Gw2d4LwX3AwpRDqrh/Cg59tY6FqQ/JsnaWatYFLdONsxLeFrETfLC+ph5p3hJrCUszYF+DY/JZmstYlG2r/TP0pK8Hm4f33oa3kzs+1vqvrTpio/5D+6xpefZIg+Y02zx+md+atGR9mk+nG4C5qG9/JRTiSwWKc+MH8FmcBwWO7QZRXSsFsE7UHEEKn5NqLXW5ZGyQ6s4MFmMIlD5LaJDNrJcxEWDyWIMgYosNlyBCotGRmURByqTxZlA5cpF/gYO1cWGKhcjeKLO1EUqi+ijcw3V99bhm25NzmQxhkDFFom+gzzTwHFZxKvIlYuwu4nAIlOgwj9bcllU0WCghMc2VBZhA8dlcSZQVTSCoo62gWOyGEHRaNFfaAu3ttblkZmiwWQxhkDFm4xMqzhTNKgsKhcJgA0cWS7CYxsqi7CBa8gClX8V8bENk0V8bENlcaZoyGJQzDRwTLdyx9vAcVmEUz/TX1HwXbJHa1k+wfcBM8UpvtP5zlqVV9C93J21KL/Q360OikbD5vDKYv/LWpF3vuWim6wF+edLLlaH3b9/ERwXRYPr4PSTVTN8FMOMabq4ZNw413XO3d1bK1mOcdrvp9FahRBCCCGEEEIIIYQQQgghhBBCRMtv7PxEggm3iH4AAAAASUVORK5CYII="alt="icon"></div>
+        <div id="right"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAYFBMVEX///8AAAD6+vo5OTne3t7Z2dmsrKyurq7b29sGBgbi4uL19fXl5eVUVFRzc3Nvb29qamqSkpJhYWFNTU3x8fHFxcUuLi5bW1u0tLSUlJRCQkJISEi7u7vOzs4zMzMSEhISNcZZAAACZUlEQVR4nO3dC1LCQBCEYYKgQgARUXyB97+lCEWJkKUSHi7T/X8n2K6dyWygUttqAQAAAAAAAAAAAAAAbJSDae4lXFJ31CuWxs+5F3Ih5UOxMRzkXswllC/Flk7u5VzAn4CKER+LHd3cKzqzaW83YXGfe03n9boXUK1QRxUJtXZxVpVQqheHlQmVCnVcnVAo4t6wkCvUbiqhTsSnZESVQu0nE8oMjaqZL1aot/q7eJeOqNKLByKq7OKBQjXoRYNCNYhoUKgGEQ0KlaERBgc4BQwNBd5DwyCiQaEyNMLgAKeAXlTgPTQMIhoUqkFEg0JlaITBAU4BQ0OB99AwiGhQqAyNMDjAKWBoKPAeGgYRDQqVoZHSvjLn3cX+2+T95tp8pBM27cWtrzvDaLSLndyrPUqDXhzkXuuR6n9LnP7W47oN6wb8zL3So9X96D3x3VwAk3oB27nXeYJ2rYQxH6Rr/VoJ57mXeYI5e7ii34f6z1KDeah/pjE4lwZ9nDZ6z4/4ftj0hwz1d/y13L/L7NL/tU3+R+H0Dvbkd1DjN2/jEpUP2JMvUfmHjHqJiuyg/H/48j3oPCY0dpCjWnTGPahfohoPGecSld9B+R6UL1H1gLzRx0APRuc8JjR60LhERd7onXtQvUTlA3JUi8G5BzV20HlMyO+geg9yVIvBeUyoB+SoFoNxiYrsoPx9Twfu7NIoUf1715J354kc1RzuP9S/w1L/HlL9u2T17wPWv9NZ/15u/bvVW62FcomulAvxgMuIv8/TWYNveEPpjr5+8o1rf2YeUTkocy8BAAAAAAAAAAAAAAD8k28b1Sow8PrjFwAAAABJRU5ErkJggg=="alt="right"></div>
+    </div>
+</body>
+</html>

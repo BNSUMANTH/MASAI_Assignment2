@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1{
+                text-align: center;
+            }
+        #sum{
+            display: grid;
+            width: 50%;
+            height: 50vh;
+            grid-template-columns:repeat(4,1fr) ;
+            gap: 10px;
+            margin: auto;
+        }
+        #text{
+            grid-column: span 4;
+        }
+        #sum>div{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 5px;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+        }
+        #su{
+            background-color: rgb(0, 0, 0);
+            color: #fbfbfb;
+        }
+        #re{
+            background-color:rgb(235, 51, 35) ;
+        }
+        #con{
+            width: 100%;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Masai Calculator</h1>
+   <div id="con">
+    <div id="sum">
+        <div id="text"></div>
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div id="su">+</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div id="su">-</div>
+        <div>7</div>
+        <div>8</div>
+        <div>9</div>
+        <div id="su">*</div>
+        <div id="re">C</div>
+        <div>0</div>
+        <div id="su">=</div>
+        <div id="su">/</div>
+    </div>
+   </div>
+</body>
+</html>

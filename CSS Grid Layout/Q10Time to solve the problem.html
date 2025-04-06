@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #sum{
+            background-color: #a686bd;
+            padding: 10px;
+            display: grid;
+            gap: 10px;
+            grid-template-columns: repeat(3,1fr);
+            grid-template-rows: repeat(2,200px);
+
+        }
+        #sum>div{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 2px solid black;
+        }
+    #sum>div:nth-child(1){
+        background-color: rgb(238, 73, 32);
+        grid-column: span 2;
+    }
+    #sum>div:nth-child(2){
+        background-color: #fac7ca;
+        grid-row: span 2;
+    }
+    #sum>div:nth-child(3){
+        background-color: #000dfe;
+    }
+    #sum>div:nth-child(4){
+        background-color: #a13c2f;
+    }
+    </style>
+</head>
+<body>
+    <div id="sum">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+    </div>
+</body>
+</html>
