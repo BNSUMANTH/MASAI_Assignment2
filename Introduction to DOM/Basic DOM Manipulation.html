@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic DOM</title>
+</head>
+<body>
+    
+    <button id="btn">Add Item</button>
+    <ul>
+        <li>Old Item</li>
+        <li>Old Item</li>
+        <li>Old Item</li>
+    </ul>
+</body>
+</html>
+<script>
+    let button  = document.getElementById("btn")
+    let unOrdered = document.querySelector("ul")
+    console.log(unOrdered)
+    let i=0
+    button.addEventListener("click",()=>{
+        let element = document.createElement("li")
+        element.innerText="New Item"
+        // let i=0 
+        if(i%2==0){
+                element.style.color="red"
+                element.style.fontStyle="italic"
+                unOrdered.append(element)
+                i++
+        }
+        else{
+            element.style.color="blue"
+            element.style.fontWeight="bold"
+            unOrdered.append(element)
+            i++
+        }
+    })
+</script>

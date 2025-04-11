@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Propagation Exploration</title>
+    <style>
+        #main{
+            background-color: red;
+            width: 80%;
+            height: 60vh;
+            margin: auto;
+        }
+        #inside{
+            background-color: rgb(4, 57, 231);
+            width: 50%;
+            height: 40vh;
+        }
+        #nested{
+            background-color: rgb(227, 231, 4);
+            width: 50%;
+            height: 20vh;    
+        }
+        
+    </style>
+</head>
+<body>
+    <div id="main">Main DIV
+        <button></button>
+        <div id="inside">
+            Child 1 DIV
+            <button></button>
+            <div id="nested">
+                Child 2 DIV
+                <button></button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    let mainDiv = document.getElementById("main")
+    mainDiv.addEventListener("click",(event)=>{
+        alert(mainDiv.innerText)
+        // event.stopPropagation()
+    })
+    let insideDiv = document.getElementById("inside")
+    insideDiv.addEventListener("click",(event)=>{
+        alert(insideDiv.innerText)
+        // event.stopPropagation()
+    })
+    let nestedDiv = document.getElementById("nested")
+    nestedDiv.addEventListener("click",(event)=>{
+        alert(nestedDiv.innerText)
+        event.stopPropagation()
+    })
+</script>

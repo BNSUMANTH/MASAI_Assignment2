@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creating and Removing Elements</title>
+    <style>
+        #insert,#delete{
+            margin: 10px;
+            width: 100px;
+        }
+       .DIV{
+        margin: 10px;
+       }
+    </style>
+</head>
+<body> 
+    <button  id="insert">Add Paragraph</button>
+    <div id="DIV"></div>
+    <button id="delete">Remove Last Paragraph</button>  
+</body>
+</html>
+<script>
+    let mainDiv = document.getElementById("DIV")
+    let addBTN = document.getElementById("insert")
+    let i=0
+    addBTN.addEventListener("click",()=>{
+        let childPara = document.createElement("p")
+        childPara.innerText = "This is a new paragraph"
+        if(i%2==0){
+            childPara.style.color="blue"
+            childPara.style.fontWeight="bold"
+            mainDiv.appendChild(childPara)
+            i++
+        }
+        else {
+            childPara.style.color="green"
+            childPara.style.fontStyle="italic"
+            mainDiv.appendChild(childPara)
+            i++
+        }
+    })
+    delBTN = document.getElementById("delete")
+    delBTN.addEventListener("click",()=>{
+        mainDiv.removeChild(mainDiv.lastChild)
+    })
+</script>

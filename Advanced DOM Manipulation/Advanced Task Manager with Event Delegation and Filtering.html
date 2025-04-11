@@ -1,0 +1,84 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Task Manager with Event Delegation and Filtering</title>
+</head>
+<body>
+    <input type="text" id="InputTag" placeholder="Enter the Task">
+    <button>Click on me to add a task</button>
+    <ol id="list"></ol>
+    <div></div>
+</body>
+</html>
+<script>
+    let taskName = document.getElementById("InputTag") 
+    let tasksList = document.getElementById("list")
+    let btnForAdd = document.querySelector("button")
+    // 1.Adding tasks 
+    btnForAdd.addEventListener("click",()=>{
+        let li = document.createElement("li")
+        if(taskName.value==" " || taskName.value==""){
+            alert("Please enter the task name!")
+        }
+        else {
+            li.innerHTML=taskName.value 
+        }
+        li.innerHTML=taskName.value 
+        // creating button for deleting
+        let btnForDelete = document.createElement("button")
+        btnForDelete.innerHTML=" Click to Delete this Task" 
+        btnForDelete.style.color="red" 
+        btnForDelete.style.width="200px"
+        btnForDelete.style.margin="5px"
+        btnForDelete.addEventListener("click",()=>{
+            li.remove()// removing the item in the list items
+        })
+        // adding check box in the every item
+        let checkbox = document.createElement("input")
+        checkbox.type="checkBox" 
+        // alert(checkbox.value)
+        li.appendChild(checkbox)
+        li.appendChild(btnForDelete)
+        tasksList.appendChild(li)
+    })
+    // 2. filtering tasks
+    let btnForAllTasks = document.createElement("button")
+    btnForAllTasks.innerHTML="Click to show all the Tasks"
+    tasksList.append(btnForAllTasks)
+    btnForAllTasks.addEventListener("click",()=>{
+        console.log(tasksList)
+    })
+    btnForCompletedTasks =document.createElement("button")
+    btnForCompletedTasks.innerHTML="Click to show all the Completed Tasks"
+    btnForCompletedTasks.style.margin="10px"
+    tasksList.append(btnForCompletedTasks)
+    btnForCompletedTasks.addEventListener("click",()=>{
+        tasksList.filter((ele,index)=>{
+            if(ele.checkbox){
+                console.log(ele)
+            }
+        })
+    })
+    btnForNotCompletedTasks =document.createElement("button")
+    btnForNotCompletedTasks.innerHTML="Click to show all the Not Completed Tasks"
+    btnForNotCompletedTasks.style.margin="10px"
+    tasksList.append(btnForNotCompletedTasks)
+    btnForNotCompletedTasks.addEventListener("click",()=>{
+        console.log(tasksList)
+    })
+    // sorting 
+    let btnForSort = document.createElement("button")
+    btnForSort.innerText="Click on me to sort the tasks"
+    btnForSort.style.color="blue"
+    btnForSort.addEventListener("click",()=>{
+        tasksList.sort((a,b)=>(a.value.localeCompare(b.value)))
+        console.log(tasksList)
+    })
+    tasksList.append(btnForSort)
+
+
+
+</script>

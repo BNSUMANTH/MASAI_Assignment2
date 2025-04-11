@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traversing the DOM: Parent and Sibling Navigation</title>
+
+</head>
+<body>
+    <div id="container">
+        <ul id="list">
+          <li id="item1">Item 1</li>
+          <li id="item2">Item 2</li>
+          <li id="item3">Item 3</li>
+        </ul>
+      </div>      
+</body>
+</html>
+<script>
+    let parentNode = document.getElementById("list")
+    let item2 = document.getElementById("item2")
+    let btn = document.createElement("button")
+    btn.style.backgroundColor="green"
+    btn.style.width="30px"
+    btn.style.height="15px"
+    btn.style.margin="5px"
+    item2.appendChild(btn)
+    item2.addEventListener("click",()=>{
+        alert(parentNode.textContent)
+        let previous = document.getElementById("item2").previousElementSibling 
+        while(previous){
+            console.log(previous.innerHTML)
+            previous = previous.previousElementSibling
+        } 
+        let next = document.getElementById("item2").nextElementSibling 
+        while(next){
+            console.log(next.innerHTML)
+            next = next.nextElementSibling
+        }
+        // console.log(parentNode.textContent(parentNode.previousElementSibling))
+    })
+</script>

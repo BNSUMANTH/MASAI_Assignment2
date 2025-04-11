@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input style="margin: 10px;" type="text" placeholder="Type the task">
+    <br>
+    <button style="margin: 10px;" id="btn">Add Task</button>
+    <br>
+    <ul  style="margin: 10px;" id="list">Un Ordered List</ul>
+</body>
+</html>
+<script>
+    let unOrdered = document.querySelector("#list")
+    // console.log(unOrdered)
+    let btn = document.getElementById("btn")
+    btn.addEventListener("click",()=>{
+        let taskname = document.querySelector("input") 
+        if(taskname.value==""|| taskname.value==" "){
+            alert("Invalid task name!")
+        }
+        else {
+            let item = document.createElement("li") 
+            item.innerText=taskname.value
+            // creating button for deleting
+            let btnForDelete = document.createElement("button")
+            btnForDelete.addEventListener("click",()=>{
+                item.remove()
+            })
+            btnForDelete.style.width="15px"
+            btnForDelete.style.height="15px"
+            btnForDelete.style.backgroundColor="red"
+            item.append(btnForDelete)// appending delete button into every task
+
+            //  creating button for completing
+            let btnForComplete = document.createElement("button")
+            btnForComplete.addEventListener("click",()=>{
+                console.log(item+" is completed")
+            })
+            btnForComplete.style.width="15px"
+            btnForComplete.style.height="15px"
+            btnForComplete.style.backgroundColor="green"
+            item.append(btnForComplete) // appending complee button into every task 
+            unOrdered.append(item) // appending every task into the un ordered list
+        }
+        
+    })
+    // console.log(unOrdered.value)
+    
+</script>

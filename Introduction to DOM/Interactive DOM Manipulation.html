@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input style="margin: 10px;" id="color" type="text" placeholder="color name">
+    <br>
+    <input  style="margin: 10px;" type="text" id="forText" placeholder="text content">
+    <br>
+    <button  style="margin: 10px;" id="colored">Change BackgroundColor</button>
+    <br>
+    <button  style="margin: 10px;" id="data">Update Text</button>
+    <br>
+    <div  style="margin: 10px;" id="divone">Initial Data inside the Div</div>
+</body>
+</html>
+<script>
+    let btn1 = document.getElementById("colored")
+    btn1.addEventListener("click",()=>{
+        let color = document.getElementById("color")
+        function isValidColor(color) {
+            let s = new Option().style;
+            s.color = color;
+            return s.color !== '';
+        }
+        if(isValidColor(color.value)){
+            let div = document.getElementById("divone")
+            div.style.backgroundColor=color.value
+        }
+        else{
+            alert("Invalid color name!")
+        }
+        // console.log(color.value)
+        
+    })
+    let btn2 = document.getElementById("data")
+    btn2.addEventListener("click",()=>{
+        let data = document.getElementById("forText")
+        if(data.value=="" || data.value==" "){
+            alert("Please enter some text!")
+        }
+        else{
+            let div = document.getElementById("divone")
+            div.innerText=data.value
+        }
+        // console.log(data.value)
+        
+    })
+</script>
