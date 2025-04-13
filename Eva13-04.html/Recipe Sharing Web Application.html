@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #nav{
+            display: flex;
+            background-color: gray;
+            padding: 3%;
+            gap: 270px;
+        }
+        #nav>div{
+            color: rgb(143, 182, 25);
+            font-weight: bold;
+        }
+        #sec{
+            background-color: coral;
+            padding: 5%;
+            label{
+                font-weight: bold;
+            }
+            input{
+                margin: 5px;
+            }
+
+        }
+        #main{
+            display: flex;
+            div{
+                display: grid;
+                height: 100px;
+                width: 100px;
+               border: 2px solid black;
+               text-align: center;
+               font-weight: bold;
+               color: brown;
+               background-color: yellow;
+            }
+        }
+    </style>
+</head>
+<body>
+   <header>
+     <div id="nav">
+       <div>Home</div>
+       <div>Add Recipe</div>
+       <div>View Recipes</div>
+     </div>  
+    </header>
+    <section id="sec">
+        <label for="Recipename">Recipe Name:</label>
+        <input type="text" id="textinput" placeholder="color name"><br><br>
+        <label for="Ingredients">Ingredients:</label>
+        <input type="text" id="textcontent" placeholder="text content"><br><br>
+        <label for="category">Category:</label>
+        <select id="category" name="Category:"><br>
+            <option value="Breakfast">Breakfast</option>
+            <option value="Lunch">Lunch</option>
+            <option value="Dinner">Dinner</option>
+            <option value="Dessert">Dessert</option>
+            <option value="Drinks">Drinks</option>
+        </select><br><br>
+        <label for="textarea">Preparation Steps:</label>
+        <input type="text" id="area" placeholder="textarea"><br><br>
+        <button id="bu1">Update</button>
+
+    </section>
+    <div id="main">
+    <div id="divone"></div>
+    <div id="divtwo"></div>
+    <div id="divthr"></div>
+    <div id="divfour"></div>
+    </div>
+</body>
+</html>
+<script>
+    let b2=document.getElementById("bu1");
+    b2.addEventListener("click",()=>{
+        let text=document.getElementById("textinput");
+        if(text.value==""||text.value==" "){
+           alert("Please enter some text!");
+        }
+        else{
+            let div=document.getElementById("divone");
+            div.innerText=text.value;
+        }
+        let text1=document.getElementById("textcontent");
+        if(text1.value==""||text1.value==" "){
+           alert("Please enter some text!");
+        }
+        else{
+            let div=document.getElementById("divtwo");
+            div.innerText=text1.value;
+        }
+        let text2=document.getElementById("category");
+        if(text2.value==""||text2.value==" "){
+           alert("Please enter some text!");
+        }
+        else{
+            let div=document.getElementById("divthr");
+            div.innerText=text2.value;
+        }
+        let text3=document.getElementById("area");
+        if(text3.value==""||text3.value==" "){
+           alert("Please enter some text!");
+        }
+        else{
+            let div=document.getElementById("divfour");
+            div.innerText=text3.value;
+        }
+    })
+</script>
