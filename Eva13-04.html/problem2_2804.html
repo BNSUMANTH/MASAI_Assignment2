@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    h1{
+        text-align: center;
+        color:rgb(34, 47, 192);
+    }
+    #divid{
+        display: flex;
+        gap:20px;
+        padding: 20px;
+    }
+    .smartphone-card{
+        border: 1px solid black;
+        padding: 15px;
+        width: auto;
+        box-sizing: border-box;
+    }
+    .loading-indicator{
+        text-align: center;
+        font-size: 20px;
+        margin-top: 20px;
+    }
+</style>
+<body>
+    <h1>E-Shop Electronics Store</h1>
+    <div id="load" class="loanding-indicator"> Loading Please Wait</div>
+    <div id="smartphone-grid"></div>
+</body>
+</html>
+<script>
+   const api="https://dummyjson.com/products/category/smartphones";
+   const gridContainer=document.getElementById("smartphone-grid");
+   const loadingindicator=document.getElementById("load");
+   fetch(api)
+   .then(response=>{
+    if(!response.ok){
+        throw new Error("error");
+    }
+    return response.json();
+   })
+   .then(data=>{
+    loadingindicator.style.display="none";
+    render(data.products);
+   })
+   .catch(error=>{
+    loadingindicator.textContent="loading error";
+    console.error("error fetching data",error);
+   });
+   function render(phone){
+    phone.forEach(sphone=>{
+        const card=document.createElement('div');
+        card.classList.add("smartphone-card");
+        card.innerHTML=`<h3>${sphone.title}</h3>
+        <P>Price:${sphone.price}</p>
+        <P>Brand:${sphone.brand}</p>`;
+        gridContainer.appendChild(card);
+    });
+   }
+</script>
